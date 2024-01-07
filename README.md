@@ -1,22 +1,33 @@
-#### ⚠️ DISCLAIMER
+# WSO2IS 6.1.0 Dockerfiles
 
-Use these artefacts as a reference to build your deployment artefacts. Existing artefacts only developed to demonstrate a reference deployment and should not be used as is in production
+Este repositorio contiene los siguientes recursos docker : 
+- Recursos de Docker de WSO2 Identity Server Versión `6.1.0` para Alpine y Ubuntu
+- Instrucciones de despliegue
 
-------------------------------------------------------------------
+**Tener en cuenta que se requerirán tener instalados alguna herramienta GIT (gitbash, fork, etc) y docker/docker-compose instalado en el sistema**
 
-# Docker Resources for WSO2 Identity And Access Management
+## Instrucciones de instalación y despliegue
+```shell
+# Recursos docker de wso2is
+dockerfiles/ubuntu/is
+├── Dockerfile
+├── README.md
+├── docker-compose.yml
+├── docker-entrypoint.sh
+└── wso2is-6.1.0.zip
 
-This repository contains following Docker resources:
-
-- Per profile Docker resources of WSO2 Identity Server version `6.1.0` for Alpine and Ubuntu
-- Docker Compose resources to evaluate most common Identity And Access Management (IAM) deployment patterns
-
-Per profile Docker resources for WSO2 Identity Server help you build generic Docker images for deploying the
-corresponding product servers in containerized environments. Each Docker image includes the JDK, the relevant product distribution
-and a collection of utility libraries. Configurations, custom JDBC drivers other than the default MySQL JDBC driver provided,
-extensions and other deployable artifacts are designed to be provided via volume mounts to the containers spawned.
-
-Docker Compose resources have been created according to the most common IAM deployment patterns available for allowing users
-to quickly evaluate product features along side their co-operate IAM requirements. The Compose files make use of per profile
-Docker images of WSO2 Identity Server and MySQL.
-
+1 directory, 5 files
+```
+## Instrucciones de instalación y despliegue
+```shell
+# Descarga del repositorio
+git clone https://github.com/instructorinnovaappstar/wso2is.git
+```
+```shell
+# Ubicandonos a la ruta de los recursos docker
+cd dockerfiles/ubuntu/is
+# Construyendo la imagen docker
+docker-compose build
+# Desplegando el servidor wso2is 
+docker-compose up
+```

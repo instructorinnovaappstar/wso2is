@@ -1,0 +1,12 @@
+version: '3'
+services:
+  wso2is:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: wso2is
+    restart: always
+    ports:
+      - "4000:4000"
+      - "9443:9443"
+      - "9763:9763"
